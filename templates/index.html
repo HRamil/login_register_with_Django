@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body>
+    <div class="navbar">
+        <h1>AZ credit</h1>
+        <div>
+            {% if not request.user.is_authenticated %}
+            <div id="regLog">
+                <a href="{% url 'login' %}"><span class="login">Login</span></a>
+                <a href="{% url 'register' %}"><span class="register">Register</span></a>
+            </div>
+            {% else %}
+            <div id="Logout">
+                <p>Username: {{user.username}}</p>
+                <a href="{% url 'logout' %}"><span class="logout">Logout</span> </a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <div id="body">
+        {% block body %}
+
+        {% endblock %}
+    </div>
+</body>
+</html>
