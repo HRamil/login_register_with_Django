@@ -32,19 +32,32 @@
 }
 .logReg{
     padding:20px 50px;
-    background-color: #F0F0F0;
+    background-color: 	#540094;
+    color: white;
 }
 #body{
+    padding: 200px 200px;
+    background-color: #7f00e0;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100vh;
+}
+.center{
+    text-align: center;
 }
 .logReg input{
     width: 200px;
     margin-bottom:15px;
     padding: 5px;
+    background-color: none;
+    text-align: center;
+}
+::placeholder {
+    color:black
 }
 .logReg input[type="submit"]{
-    background-color: #0BDA51;
+    background-color: #8e75e4;
     width: 100%;
     border: none;
     cursor:pointer;
@@ -57,6 +70,7 @@
     background-color: #0BDA51;
 }
 .register{
+    padding: 10px 20px;
     background-color: #002244;
 }
 h2{
@@ -66,36 +80,19 @@ h2{
     display: flex ;
     flex-direction: column;
 }
-
-#slide{
-    position: absolute;
-    left:0;
-    width: 300px;
-    background-color:#17B169 ;
-    height: 200px;
-}
-.container{
+.text{
+    padding: 20px 0;
+    color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    background-color: red;
-    height: 100vh;
+    justify-content: space-between;
+    height: 150px;
 }
-.row{
-    position: relative;
-    width: 900px;
-    margin: auto;
+.logReg a span{
+    color: white;
+    z-index: 1;
 }
-#signin{
-    width: 300px;
-    position: absolute;
-    top:0;
-    left: 0;
-}
-#signup{
-    width: 300px;
-    position: absolute;
-    top:0;
-    left: 400px;
-    z-index:-1
-}
+
+
+
+

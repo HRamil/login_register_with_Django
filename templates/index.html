@@ -9,28 +9,26 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
 <body>
-    <div class="navbar">
-        <h1>AZ credit</h1>
-        <div>
-            </div>
-            {% if not request.user.is_authenticated %}
-            <div id="regLog">
-                <a href="{% url 'login' %}"><span class="login">Login</span></a>
-                <a href="{% url 'register' %}"><span class="register">Register</span></a>
-            </div>
-            {% else %}
-            <div id="Logout">
-                <p>Username: {{user.username}}</p>
-                <a href="{% url 'logout' %}"><span class="logout">Logout</span> </a>
-            </div>
-            {% endif %}
-        </div>
-    </div>
-    <div id="body">
-        {% block body %}
+    {% if not request.user.is_authenticated %}
+        <div id="body">
+            {% include 'text.html' %}
+            <div class="center">
+                {% block body %}
 
-        {% endblock %}
-    </div>
+                {% endblock %}
+            </div>
+        </div>
+    {% else %}
+        <div class="navbar">
+            <h1>AZ credit</h1>
+            <div>
+                <div id="Logout">
+                    <p>Username: {{user.username}}</p>
+                    <a href="{% url 'logout' %}"><span class="logout">Logout</span> </a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
 </body>
 </html>
 
