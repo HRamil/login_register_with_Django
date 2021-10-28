@@ -16,3 +16,6 @@ admin panel
 test login
   username: admin
   password admin
+
+link:
+  http://127.0.0.1:8000/login/
