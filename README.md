@@ -8,3 +8,11 @@
 Run Project for windows
   venv\Scripts\activate
   python manange.py runserver
+
+admin panel
+  username: admin
+  password admin
+
+test login
+  username: admin
+  password admin
