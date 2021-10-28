@@ -12,6 +12,7 @@
     <div class="navbar">
         <h1>AZ credit</h1>
         <div>
+            </div>
             {% if not request.user.is_authenticated %}
             <div id="regLog">
                 <a href="{% url 'login' %}"><span class="login">Login</span></a>
@@ -32,3 +33,4 @@
     </div>
 </body>
 </html>
+

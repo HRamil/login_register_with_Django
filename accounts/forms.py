@@ -6,8 +6,12 @@ from django.forms.widgets import TextInput
 
 
 class LoginForm(forms.Form):
-    username =  forms.CharField(max_length=100 ,label="Username" , widget=forms.TextInput)
-    password = forms.CharField(max_length=100,label="Password" , widget=forms.PasswordInput)
+    username =  forms.CharField(max_length=100 ,label="Username" , widget=forms.TextInput(attrs={
+        "placeholder":"Username"
+    }))
+    password = forms.CharField(max_length=100,label="Password" , widget=forms.PasswordInput(attrs={
+        "placeholder":"Password"
+    }))
 
 
     def clean(self):
@@ -21,20 +25,22 @@ class LoginForm(forms.Form):
 
 
 class RegisterForm(UserCreationForm):
-    first_name =  forms.CharField(max_length=100 ,label="First Name" , widget=forms.TextInput(attrs={
-        "placeholder":"First Name"
+    username =  forms.CharField(max_length=100 ,label="Username" , widget=forms.TextInput(attrs={
+        "placeholder":"Username"
     }))
-    last_name =  forms.CharField(max_length=100 ,label="Last Name" , widget=forms.TextInput)
-    username =  forms.CharField(max_length=100 ,label="Username" , widget=forms.TextInput)
-    email = forms.CharField(max_length=100, label="Email" , widget=forms.EmailInput())
-    password1 = forms.CharField(max_length=100,label="Password" , widget=forms.PasswordInput)
-    password2 = forms.CharField(max_length=100,label="Confirn Password" , widget=forms.PasswordInput)
+    email = forms.CharField(max_length=100, label="Email" , widget=forms.EmailInput(attrs={
+        "placeholder":"Email"
+    }))
+    password1 = forms.CharField(max_length=100,label="Password" , widget=forms.PasswordInput(attrs={
+        "placeholder":"Password"
+    }))
+    password2 = forms.CharField(max_length=100, widget=forms.PasswordInput(attrs={
+        "placeholder":"Confirm Password"
+    }))
 
     class Meta:
             model = User
             fields = [
-                'first_name',
-                'last_name',
                 'username',
                 'email',
                 'password1',

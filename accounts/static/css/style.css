@@ -40,16 +40,18 @@
 }
 .logReg input{
     width: 200px;
-    margin-bottom:10px;
+    margin-bottom:15px;
     padding: 5px;
 }
 .logReg input[type="submit"]{
     background-color: #0BDA51;
+    width: 100%;
     border: none;
     cursor:pointer;
     color:white;
     padding:10px;
     border-radius: 5px;
+    font-weight: bold;
 }
 .login{
     background-color: #0BDA51;
@@ -58,5 +60,42 @@
     background-color: #002244;
 }
 h2{
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+#formLog , #formReg{
+    display: flex ;
+    flex-direction: column;
+}
+
+#slide{
+    position: absolute;
+    left:0;
+    width: 300px;
+    background-color:#17B169 ;
+    height: 200px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: red;
+    height: 100vh;
+}
+.row{
+    position: relative;
+    width: 900px;
+    margin: auto;
+}
+#signin{
+    width: 300px;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+#signup{
+    width: 300px;
+    position: absolute;
+    top:0;
+    left: 400px;
+    z-index:-1
 }
